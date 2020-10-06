@@ -1,0 +1,29 @@
+{
+  "presets": [
+    ["env",
+      { "modules": false }
+    ],
+    "react",
+    "stage-1"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "lodash",
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+    }
+    ],
+    ["transform-decorators-legacy"],
+    [ "module-resolver",
+      {
+        "root":  ["./src"],
+        "alias": {
+         "~components": "./src/components"
+        }
+      }
+    ]
+  ]
+}
