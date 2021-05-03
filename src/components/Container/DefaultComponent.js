@@ -3,15 +3,14 @@ import { connect } from 'react-redux';
 import autobind from "autobind-decorator";
 
 @connect( state => state )
-class Button extends PureComponent {
-    static displayName = 'Button';
+class DefaultComponent extends PureComponent {
+    static displayName = 'DefaultComponent';
 
     constructor(props) {
         super(props);
 
         this.state = {
         }
-        this.mount = false;
     }
 
     componentDidMount(){
@@ -22,13 +21,18 @@ class Button extends PureComponent {
         this.mount = false;
     }
 
+    @autobind
+    onClick(){
+        e.preventDefault();
+    }
+
     render() {
         return (
-             <div>
-                Button
-            </div>
+              <div onClick={this.onClick}>
+                  DefaultComponent
+             </div>
         )
     }
 }
 
-export default Button;
+export default DefaultComponent;

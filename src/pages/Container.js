@@ -1,5 +1,4 @@
 import React from 'react'
-import { BackTop} from 'antd';
 
 const Container = ({ children }) => {
     const style = {
@@ -17,9 +16,7 @@ const Container = ({ children }) => {
     return (
         <div style={{ height: 'auto', padding: 8 }}>
             {children}
-            <BackTop>
                 <div style={style}>↑</div>
-            </BackTop>
         </div>
 
     );

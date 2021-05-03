@@ -3,15 +3,14 @@ import { connect } from 'react-redux';
 import autobind from "autobind-decorator";
 
 @connect( state => state )
-class DefaultCardList extends PureComponent {
-    static displayName = 'DefaultCardList';
+class Component extends PureComponent {
+    static displayName = 'Collapse';
 
     constructor(props) {
         super(props);
 
         this.state = {
         }
-        this.mount = false;
     }
 
     componentDidMount(){
@@ -22,13 +21,18 @@ class DefaultCardList extends PureComponent {
         this.mount = false;
     }
 
+    @autobind
+    onClick(){
+        e.preventDefault();
+    }
+
     render() {
         return (
-              <div>
-                 DefaultCardList
-             </div>
+            <div>
+                Collapse
+            </div>
         )
     }
 }
 
-export default DefaultCardList;
+export default Component;
